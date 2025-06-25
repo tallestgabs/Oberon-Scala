@@ -1,3 +1,77 @@
+### Gabriel de Castro Dias - 211055432
+### João Victor Pereira Vieira - 211036114
+
+## CONTRIBUIÇÕES: Pretty Print
+
+Adicionamos sistemas de tipos
+
+Adicionamos Cabeçalhos
+
+Adicionamos Sistemas de Blocos
+
+Adicionamos Funções que geram Expressões
+
+Adicionamos Arquivos Jimple gerados no Soot
+
+Organizamos os Testes
+```
+Obs: Implementamos o Pretty Print no JimpleCodeGenerator.scala
+O print foi feito através do código Jimple gerado, usamos Oberon apenas para gerar arquivos java
+Não mudamos as Declarações já Existentes
+```
+Um exemplo do que fizemos:
+```
+Print gerado anteriormente:
+ClassDeclaration(List(PublicModifer),TObject(SimpleModule4),TObject(java.lang.Object),
+List(),List(Field(List(PublicModifer, StaticModifier, FinalModifier),TInteger,x),
+Field(List(PublicModifer, StaticModifier, FinalModifier),TInteger,y),
+Field(List(PublicModifer, StaticModifier, FinalModifier),TInteger,z),
+Field(List(PublicModifer, StaticModifier),TInteger,abc),
+Field(List(PublicModifer, StaticModifier),TBoolean,def)),
+List(Method(List(PublicModifer, StaticModifier),TVoid,main,List(TArray(TString)),List(),
+DefaultMethodBody(List(LocalVariableDeclaration(TArray(TString),args)),
+List(AssignStmt(StaticField(FieldSignature(SimpleModule4,TInteger,x)),
+ImmediateExpression(ImmediateValue(IntValue(5)))),
+AssignStmt(StaticField(FieldSignature(SimpleModule4,TInteger,y)),
+ImmediateExpression(ImmediateValue(IntValue(10)))),
+AssignStmt(StaticField(FieldSignature(SimpleModule4,TInteger,z)),
+PlusExpression(ImmediateValue(IntValue(5)),ImmediateValue(IntValue(10))))),List()))))
+```
+```
+Print atual:
+Public Class SimpleModule4 extends java.lang.Object
+{
+Public static final int x;
+Public static final int y;
+Public static final int z;
+Public int abc;
+Public boolean def;
+
+public void <init>()
+{
+    SimpleModule4 r0;
+
+    r0 := @this: SimpleModule4;
+
+    specialinvoke r0.<java.lang.Object: void <init>()>();
+
+    return;    
+}
+
+public static void <clinit>()
+{
+    <SimpleModule4: int z> = 15;
+
+    <SimpleModule4: int y> = 10;
+
+    <SimpleModule4: int x> = 5;
+
+    return;
+}
+}
+```
+
+
 ## Oberon Language
 
 This is an implementation of the Oberon language in Scala.
